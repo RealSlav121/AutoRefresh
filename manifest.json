@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Refresh",
+  "version": "1.0",
+  "description": "Auto-refresh the current tab with customizable interval.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "icons": {
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["inject.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Auto Refresh",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  }
+}
